@@ -25,7 +25,7 @@
 ## Installation
 
 ```bash
-$ npm i --save @nestjs/swagger 
+$ npm i --save @inhanbyeol/nestjs-swagger 
 ```
 
 ## Quick Start
@@ -34,7 +34,7 @@ $ npm i --save @nestjs/swagger
 
 ## Migration from v3
 
-If you're currently using `@nestjs/swagger@3.*`, note the following breaking/API changes in version 4.0.
+If you're currently using `@inhanbyeol/nestjs-swagger@3.*`, note the following breaking/API changes in version 4.0.
 
 The following decorators have been changed/renamed:
 

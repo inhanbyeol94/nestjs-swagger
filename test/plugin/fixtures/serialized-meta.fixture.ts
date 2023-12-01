@@ -9,7 +9,7 @@ export default async () => {
     ['./cats/classes/cat.class']: await import('./cats/classes/cat.class')
   };
   return {
-    '@nestjs/swagger': {
+    '@inhanbyeol/nestjs-swagger': {
       models: [
         [
           import('./cats/dto/pagination-query.dto'),

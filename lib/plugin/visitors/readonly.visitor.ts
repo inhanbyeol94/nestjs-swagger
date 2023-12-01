@@ -5,7 +5,7 @@ import { ControllerClassVisitor } from './controller-class.visitor';
 import { ModelClassVisitor } from './model-class.visitor';
 
 export class ReadonlyVisitor {
-  public readonly key = '@nestjs/swagger';
+  public readonly key = '@inhanbyeol/nestjs-swagger';
   private readonly modelClassVisitor = new ModelClassVisitor();
   private readonly controllerClassVisitor = new ControllerClassVisitor();
 

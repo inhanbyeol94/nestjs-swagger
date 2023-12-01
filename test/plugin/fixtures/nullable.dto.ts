@@ -21,7 +21,7 @@ export class NullableDto {
 }
 `;
 
-export const nullableDtoTextTranspiled = `import * as openapi from "@nestjs/swagger";
+export const nullableDtoTextTranspiled = `import * as openapi from "@inhanbyeol/nestjs-swagger";
 var OneValueEnum;
 (function (OneValueEnum) {
     OneValueEnum[OneValueEnum["ONE"] = 0] = "ONE";

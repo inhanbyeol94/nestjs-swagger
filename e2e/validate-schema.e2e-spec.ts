@@ -50,7 +50,7 @@ describe('Validate OpenAPI schema', () => {
 
   it('should produce a valid OpenAPI 3.0 schema', async () => {
     await SwaggerModule.loadPluginMetadata(async () => ({
-      '@nestjs/swagger': {
+      '@inhanbyeol/nestjs-swagger': {
         models: [
           [
             import('./src/cats/classes/cat.class'),

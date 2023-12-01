@@ -1,5 +1,5 @@
 export const appControllerText = `import { Controller, Post, HttpStatus } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
+import { ApiOperation } from '@inhanbyeol/nestjs-swagger';
 
 class Cat {}
 
@@ -61,9 +61,9 @@ export class AppController {
 export const appControllerTextTranspiled = `\"use strict\";
 Object.defineProperty(exports, \"__esModule\", { value: true });
 exports.AppController = void 0;
-const openapi = require(\"@nestjs/swagger\");
+const openapi = require(\"@inhanbyeol/nestjs-swagger\");
 const common_1 = require(\"@nestjs/common\");
-const swagger_1 = require(\"@nestjs/swagger\");
+const swagger_1 = require(\"@inhanbyeol/nestjs-swagger\");
 class Cat {
 }
 let AppController = exports.AppController = class AppController {

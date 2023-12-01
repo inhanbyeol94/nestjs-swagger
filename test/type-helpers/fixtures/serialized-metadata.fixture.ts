@@ -1,5 +1,5 @@
 export const SERIALIZED_METADATA = {
-  '@nestjs/swagger': {
+  '@inhanbyeol/nestjs-swagger': {
     models: [
       [
         import('./create-user-dto.fixture'),
