@@ -168,14 +168,24 @@ export class SchemaObjectFactory {
 
       const schemaCombinators = ['oneOf', 'anyOf', 'allOf'];
       let keyOfCombinators = '';
-      if (schemaCombinators.some((_key) => { keyOfCombinators = _key; return _key in property; })) {
-          if (((property as SchemaObjectMetadata)?.type === 'array' || (property as SchemaObjectMetadata).isArray) && keyOfCombinators) {
-              (property as SchemaObjectMetadata).items = {};
-              (property as SchemaObjectMetadata).items[keyOfCombinators] = property[keyOfCombinators];
-              delete property[keyOfCombinators];
-          } else {
-              delete (property as SchemaObjectMetadata).type;
-          }
+      if (
+        schemaCombinators.some((_key) => {
+          keyOfCombinators = _key;
+          return _key in property;
+        })
+      ) {
+        if (
+          ((property as SchemaObjectMetadata)?.type === 'array' ||
+            (property as SchemaObjectMetadata).isArray) &&
+          keyOfCombinators
+        ) {
+          (property as SchemaObjectMetadata).items = {};
+          (property as SchemaObjectMetadata).items[keyOfCombinators] =
+            property[keyOfCombinators];
+          delete property[keyOfCombinators];
+        } else {
+          delete (property as SchemaObjectMetadata).type;
+        }
       }
       return property as ParameterObject;
     });
@@ -204,7 +214,8 @@ export class SchemaObjectFactory {
     if (!propertiesWithType) {
       return '';
     }
-    const extensionProperties = Reflect.getMetadata(DECORATORS.API_EXTENSION, type) || {};
+    const extensionProperties =
+      Reflect.getMetadata(DECORATORS.API_EXTENSION, type) || {};
     const typeDefinition: SchemaObject = {
       type: 'object',
       properties: mapValues(keyBy(propertiesWithType, 'name'), (property) =>
@@ -302,11 +313,8 @@ export class SchemaObjectFactory {
     const $ref = getSchemaPath(enumName);
 
     if (!(enumName in schemas)) {
-      const enumType: string = (
-        metadata.isArray
-        ? metadata.items['type']
-        : metadata.type
-      ) ?? 'string';
+      const enumType: string =
+        (metadata.isArray ? metadata.items['type'] : metadata.type) ?? 'string';
 
       schemas[enumName] = {
         type: enumType,
