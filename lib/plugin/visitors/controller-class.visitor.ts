@@ -397,7 +397,7 @@ export class ControllerClassVisitor extends AbstractFileVisitor {
       }
     }
     const postDecorator = getDecoratorOrUndefinedByNames(
-      ['Post'],
+      'Post',
       decorators,
       factory
     );

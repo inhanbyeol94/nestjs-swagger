@@ -18,7 +18,7 @@ import {
 } from './ast-utils';
 
 export function getDecoratorOrUndefinedByNames(
-  names: string[],
+  names: string | string[],
   decorators: readonly ts.Decorator[],
   factory: ts.NodeFactory
 ): ts.Decorator | undefined {
